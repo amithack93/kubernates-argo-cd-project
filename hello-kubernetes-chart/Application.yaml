@@ -1,0 +1,52 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-hello-app
+spec:
+  source:
+    repoURL: <URL_TO_YOUR_HELM_CHART_REPO>
+    targetRevision: <HELM_CHART_VERSION>
+  destination:
+    server: 'https://kubernetes.default.svc'
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+--- # Add for dev environment
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-hello-app-dev
+spec:
+  source:
+    path: hello-kubernetes-chart
+    repoURL: <URL_TO_YOUR_HELM_CHART_REPO>
+    targetRevision: <HELM_CHART_VERSION>
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: dev
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+  valuesFiles:
+    - values-dev/values.yaml
+--- # Add for test environment
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-hello-app-test
+spec:
+  source:
+    path: hello-kubernetes-chart
+    repoURL: <URL_TO_YOUR_HELM_CHART_REPO>
+    targetRevision: <HELM_CHART_VERSION>
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: test
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+  valuesFiles:
+    - values-test/values.yaml

@@ -1,0 +1,12 @@
+# values-test/values.yaml
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  hosts:
+    - host: test.example.com
+      paths:
+        - /

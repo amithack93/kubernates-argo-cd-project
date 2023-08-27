@@ -1,0 +1,12 @@
+# values-dev/values.yaml
+
+service:
+  type: NodePort
+  port: 80
+
+ingress:
+  enabled: true
+  hosts:
+    - host: dev.example.com
+      paths:
+        - /

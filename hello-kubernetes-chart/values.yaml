@@ -1,7 +1,7 @@
 # values.yaml
 
 image:
-  repository: paulbouwer/hello-kubernetes
+  repository: bitnami/wordpress
   tag: latest
   pullPolicy: IfNotPresent
 

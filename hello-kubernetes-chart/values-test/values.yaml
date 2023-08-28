@@ -4,6 +4,13 @@ service:
   type: ClusterIP
   port: 80
 
+# values-dev/values.yaml and values-test/values.yaml
+
+wordpress:
+  env:
+    WORDPRESS_DATABASE_PASSWORD: Test@123
+
+
 ingress:
   enabled: true
   hosts:

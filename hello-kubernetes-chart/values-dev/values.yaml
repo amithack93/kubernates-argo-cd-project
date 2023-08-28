@@ -4,6 +4,10 @@ service:
   type: NodePort
   port: 80
 
+wordpress:
+  env:
+    WORDPRESS_DATABASE_PASSWORD: Test@123
+
 ingress:
   enabled: true
   hosts:

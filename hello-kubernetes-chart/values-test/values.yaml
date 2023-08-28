@@ -8,10 +8,10 @@ service:
 
 wordpress:
   env:
-    ALLOW_EMPTY_PASSWORD: "yes"
-    WORDPRESS_DATABASE_USER: "bn_wordpress_test"
-    WORDPRESS_DATABASE_PASSWORD: "bitnami"
-    WORDPRESS_DATABASE_NAME: "bitnami_wordpress_test"
+    ALLOW_EMPTY_PASSWORD: yes
+    WORDPRESS_DATABASE_USER: bn_wordpress
+    WORDPRESS_DATABASE_PASSWORD: bitnami
+    WORDPRESS_DATABASE_NAME: bitnami_wordpress
 
 volumes:
   - name: wordpress_data_test

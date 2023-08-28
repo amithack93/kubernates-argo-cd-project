@@ -4,8 +4,8 @@ metadata:
   name: my-hello-app
 spec:
   source:
-    repoURL: <URL_TO_YOUR_HELM_CHART_REPO>
-    targetRevision: <HELM_CHART_VERSION>
+    repoURL: https://gitlab.com/amhack/kubernates-argo-cd-project.git
+    targetRevision: v3.12.2
   destination:
     server: 'https://kubernetes.default.svc'
   project: default
@@ -20,8 +20,8 @@ metadata:
 spec:
   source:
     path: hello-kubernetes-chart
-    repoURL: <URL_TO_YOUR_HELM_CHART_REPO>
-    targetRevision: <HELM_CHART_VERSION>
+    repoURL: https://gitlab.com/amhack/kubernates-argo-cd-project.git
+    targetRevision: v3.12.2
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: dev
@@ -39,8 +39,8 @@ metadata:
 spec:
   source:
     path: hello-kubernetes-chart
-    repoURL: <URL_TO_YOUR_HELM_CHART_REPO>
-    targetRevision: <HELM_CHART_VERSION>
+    repoURL: https://gitlab.com/amhack/kubernates-argo-cd-project.git
+    targetRevision: v3.12.2
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: test

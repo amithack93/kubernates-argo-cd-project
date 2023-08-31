@@ -5,19 +5,6 @@ service:
   port: 80
 
 # values-dev/values.yaml and values-test/values.yaml
-
-wordpress:
-  env:
-    ALLOW_EMPTY_PASSWORD: yes
-    WORDPRESS_DATABASE_USER: bn_wordpress
-    WORDPRESS_DATABASE_PASSWORD: bitnami
-    WORDPRESS_DATABASE_NAME: bitnami_wordpress
-
-volumes:
-  - name: wordpress_data_test
-    persistentVolumeClaim:
-      claimName: wordpress-data-test
-
 ingress:
   enabled: true
   hosts:

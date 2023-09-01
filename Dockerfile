@@ -1,20 +1,19 @@
-# Use the official Python image as the base image
-FROM python:3.8-slim
+# start by pulling the python image
+FROM python:3.8-alpine
 
-# Set the working directory in the container
+# copy the requirements file into the image
+COPY ./requirements.txt /app/requirements.txt
+
+# switch working directory
 WORKDIR /app
 
-# Copy the requirements file into the container
-COPY requirements.txt requirements.txt
-
-# Install the required Python packages
+# install the dependencies and packages in the requirements file
 RUN pip install -r requirements.txt
 
-# Copy the rest of the application code into the container
-COPY . .
+# copy every content from the local file to the image
+COPY . /app
 
-# Expose the port that your Flask app will listen on
-EXPOSE 8080
+# configure the container to run in an executed manner
+ENTRYPOINT [ "python" ]
 
-# Define the command to run your application
-CMD ["python", "app.py"]
+CMD ["app.py" ]

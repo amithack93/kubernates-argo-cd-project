@@ -1,7 +1,7 @@
 # values.yaml
 
 image:
-  repository: my-flask-app
+  repository: amithack93/flask-docker
   tag: latest
   pullPolicy: IfNotPresent
 

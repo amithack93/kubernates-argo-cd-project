@@ -7,6 +7,6 @@ service:
 ingress:
   enabled: true
   hosts:
-    - host: dev.example.com
+    - host: dev-app.local
       paths:
         - /

@@ -13,4 +13,4 @@ spec:
               service:
                 name: {{ include "hello-kubernetes-chart.fullname" . }}
                 port:
-                  number: 80
+                  number: 81

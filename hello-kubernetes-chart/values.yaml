@@ -14,10 +14,10 @@ serviceAccount:
   name: ""
 
 ingress:
-  enabled: false
+  enabled: true
   annotations: {}
   hosts:
-    - host: chart-example.local
+    - host: chart-app.local
       paths: []
 
 autoscaling:

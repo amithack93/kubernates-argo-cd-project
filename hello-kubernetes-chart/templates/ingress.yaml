@@ -4,13 +4,13 @@ metadata:
   name: my-ingress
 spec:
   rules:
-    - host: example.com
+    - host: my-app.local
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: my-service
+                name: {{ include "hello-kubernetes-chart.fullname" . }}
                 port:
                   number: 80

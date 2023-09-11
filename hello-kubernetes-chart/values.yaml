@@ -1,5 +1,3 @@
-# values.yaml
-
 image:
   repository: amithack93/flask-docker
   tag: latest
@@ -15,14 +13,9 @@ serviceAccount:
 
 ingress:
   enabled: false
-  # annotations: {}
-  # hosts:
-  #   - host: my-app.local
-  #     paths: []
 
 autoscaling:
   enabled: false
   minReplicas: 1
   maxReplicas: 5
   targetCPUUtilizationPercentage: 80
-# You can add more configuration options here as needed.

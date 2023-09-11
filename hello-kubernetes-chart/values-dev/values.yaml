@@ -1,11 +1,13 @@
-# values-dev/values.yaml
-
 service:
   type: NodePort
-  port: 8081
+  port: 80
+  targetPort: 80
+  nodePort: 30801
 
 ingress:
   enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
   hosts:
     - host: dev.my-app.local
       paths:

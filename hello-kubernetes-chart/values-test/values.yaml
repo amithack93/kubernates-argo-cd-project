@@ -2,12 +2,12 @@
 
 service:
   type: ClusterIP
-  port: 5000
+  port: 8082
 
 # values-dev/values.yaml and values-test/values.yaml
 ingress:
   enabled: true
   hosts:
-    - host: test-app.local
+    - host: test.my-app.local
       paths:
         - /

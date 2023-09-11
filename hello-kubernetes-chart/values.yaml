@@ -12,7 +12,7 @@ serviceAccount:
   name: ""
 
 ingress:
-  enabled: false
+  enabled: true
 
 autoscaling:
   enabled: false

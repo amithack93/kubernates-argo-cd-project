@@ -1,7 +1,7 @@
 # values-test/values.yaml
 
 service:
-  type: ClusterIP
+  type: NodePort
   port: 8082
 
 # values-dev/values.yaml and values-test/values.yaml

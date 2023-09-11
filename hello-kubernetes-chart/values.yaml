@@ -13,12 +13,12 @@ serviceAccount:
   create: true
   name: ""
 
-# ingress:
-#   enabled: true
-#   annotations: {}
-#   hosts:
-#     - host: my-app.local
-#       paths: []
+ingress:
+  enabled: false
+  # annotations: {}
+  # hosts:
+  #   - host: my-app.local
+  #     paths: []
 
 autoscaling:
   enabled: false

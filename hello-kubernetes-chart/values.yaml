@@ -11,8 +11,12 @@ serviceAccount:
   create: true
   name: ""
 
+fullnameOverride: ""
+
 ingress:
   enabled: true
+  hosts:
+    - host: my-app.local
 
 autoscaling:
   enabled: false

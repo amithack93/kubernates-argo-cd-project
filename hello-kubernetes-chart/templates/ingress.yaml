@@ -1,16 +1,19 @@
+{{- $root := . -}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: my-ingress
 spec:
   rules:
-    - host: my-app.local
+  {{- range .Values.ingress.hosts }}
+    - host: {{ .host }}
       http:
         paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: {{ include "hello-kubernetes-chart.fullname" . }}
-                port:
-                  number: {{ .Values.service.port }}
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: {{ include "hello-kubernetes-chart.fullname" $root }}
+              port:
+                number: {{ $root.Values.service.port }}  
+  {{- end }}
